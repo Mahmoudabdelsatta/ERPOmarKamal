@@ -16,6 +16,8 @@ namespace ERPOmarKamal
         {
           var data=  cx.المخزن.Select(x=>x).Where(m => m.اسم_الصنف.ToLower().StartsWith(name.ToLower()));
             return data.ToList();
-        }
+        } 
+
+
     }
 }
