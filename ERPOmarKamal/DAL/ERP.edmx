@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="omarKamalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="نوع العمليه" Type="nvarchar" MaxLength="50" />
+          <Property Name="التاريخ" Type="datetime" />
+          <Property Name="التفاصيل" Type="nvarchar" MaxLength="200" />
+          <Property Name="اسم صاحب العمليه" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="اسم المستخدم" Type="nvarchar" MaxLength="100" />
+          <Property Name="الرقم السرى" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="العملاء">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="اسم العميل" Type="nvarchar" MaxLength="200" />
+          <Property Name="اجمالى المبلغ" Type="float" />
+          <Property Name="المدفوع" Type="float" />
+          <Property Name="المتبقي" Type="float" />
+          <Property Name="رقم كود الصنف" Type="int" />
+          <Property Name="التاريخ" Type="datetime" />
+        </EntityType>
+        <EntityType Name="المبيعات">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="رقم  كود الصنف" Type="int" />
+          <Property Name="التاريخ" Type="datetime" />
+          <Property Name="العدد" Type="int" />
+          <Property Name="السعر" Type="float" />
+          <Property Name="الاجمالى" Type="float" />
+          <Property Name="وارد" Type="float" />
+        </EntityType>
+        <EntityType Name="المخزن">
+          <Key>
+            <PropertyRef Name="الكود" />
+          </Key>
+          <Property Name="الكود" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="التاريخ" Type="datetime" />
+          <Property Name="اسم الصنف" Type="nvarchar(max)" />
+          <Property Name="الموديل" Type="nvarchar" MaxLength="200" />
+          <Property Name="رصيد أول المده" Type="int" />
+          <Property Name="رصيد اخر المده" Type="int" />
+          <Property Name="اسم معدل الجدول" Type="nvarchar" MaxLength="50" />
+          <Property Name="تاريخ التعديل" Type="datetime" />
+        </EntityType>
+        <EntityType Name="المشتريات">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="رقم كود الصنف" Type="int" />
+          <Property Name="التاريخ" Type="datetime" />
+          <Property Name="العدد" Type="int" />
+          <Property Name="السعر" Type="float" />
+          <Property Name="الاجمالى" Type="float" />
+        </EntityType>
+        <EntityType Name="الموردين">
+          <Key>
+            <PropertyRef Name="الكود" />
+          </Key>
+          <Property Name="الكود" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="اسم المورد" Type="nvarchar" MaxLength="200" />
+          <Property Name="التاريخ" Type="datetime" />
+          <Property Name="الصنف" Type="int" />
+          <Property Name="الموديل" Type="nvarchar" MaxLength="100" />
+          <Property Name="العدد" Type="int" />
+          <Property Name="السعر" Type="float" />
+          <Property Name="الاجمالى" Type="float" />
+          <Property Name="تورديد" Type="float" />
+          <Property Name="الرصيد" Type="float" />
+        </EntityType>
+        <Association Name="FK_العملاء_المخزن1">
+          <End Role="المخزن" Type="Self.المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="العملاء" Type="Self.العملاء" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="العملاء">
+              <PropertyRef Name="رقم كود الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المبيعات_المخزن">
+          <End Role="المخزن" Type="Self.المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="المبيعات" Type="Self.المبيعات" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="المبيعات">
+              <PropertyRef Name="رقم  كود الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المشتريات_المخزن">
+          <End Role="المخزن" Type="Self.المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="المشتريات" Type="Self.المشتريات" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="المشتريات">
+              <PropertyRef Name="رقم كود الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_الموردين_المخزن">
+          <End Role="المخزن" Type="Self.المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="الموردين" Type="Self.الموردين" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="الموردين">
+              <PropertyRef Name="الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="omarKamalModelStoreContainer">
+          <EntitySet Name="log" EntityType="Self.log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="العملاء" EntityType="Self.العملاء" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="المبيعات" EntityType="Self.المبيعات" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="المخزن" EntityType="Self.المخزن" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="المشتريات" EntityType="Self.المشتريات" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="الموردين" EntityType="Self.الموردين" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_العملاء_المخزن1" Association="Self.FK_العملاء_المخزن1">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="العملاء" EntitySet="العملاء" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المبيعات_المخزن" Association="Self.FK_المبيعات_المخزن">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="المبيعات" EntitySet="المبيعات" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المشتريات_المخزن" Association="Self.FK_المشتريات_المخزن">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="المشتريات" EntitySet="المشتريات" />
+          </AssociationSet>
+          <AssociationSet Name="FK_الموردين_المخزن" Association="Self.FK_الموردين_المخزن">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="الموردين" EntitySet="الموردين" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="omarKamalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="omarKamalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="logs" EntityType="omarKamalModel.log" />
+          <EntitySet Name="العملاء" EntityType="omarKamalModel.العملاء" />
+          <EntitySet Name="المبيعات" EntityType="omarKamalModel.المبيعات" />
+          <EntitySet Name="المخزن" EntityType="omarKamalModel.المخزن" />
+          <EntitySet Name="المشتريات" EntityType="omarKamalModel.المشتريات" />
+          <EntitySet Name="الموردين" EntityType="omarKamalModel.الموردين" />
+          <AssociationSet Name="FK_المبيعات_المخزن" Association="omarKamalModel.FK_المبيعات_المخزن">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="المبيعات" EntitySet="المبيعات" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المشتريات_المخزن" Association="omarKamalModel.FK_المشتريات_المخزن">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="المشتريات" EntitySet="المشتريات" />
+          </AssociationSet>
+          <AssociationSet Name="FK_الموردين_المخزن" Association="omarKamalModel.FK_الموردين_المخزن">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="الموردين" EntitySet="الموردين" />
+          </AssociationSet>
+          <EntitySet Name="logins" EntityType="omarKamalModel.login" />
+          <AssociationSet Name="FK_العملاء_المخزن1" Association="omarKamalModel.FK_العملاء_المخزن1">
+            <End Role="المخزن" EntitySet="المخزن" />
+            <End Role="العملاء" EntitySet="العملاء" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="نوع_العمليه" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="التاريخ" Type="DateTime" Precision="3" />
+          <Property Name="التفاصيل" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="اسم_صاحب_العمليه" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="العملاء">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="اسم_العميل" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="المدفوع" Type="Double" />
+          <Property Name="المتبقي" Type="Double" />
+          <Property Name="رقم_كود_الصنف" Type="Int32" />
+          <Property Name="التاريخ" Type="DateTime" Precision="3" />
+          <Property Name="اجمالى_المبلغ" Type="Double" />
+          <NavigationProperty Name="المخزن" Relationship="omarKamalModel.FK_العملاء_المخزن1" FromRole="العملاء" ToRole="المخزن" />
+        </EntityType>
+        <EntityType Name="المبيعات">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="رقم__كود_الصنف" Type="Int32" />
+          <Property Name="التاريخ" Type="DateTime" Precision="3" />
+          <Property Name="العدد" Type="Int32" />
+          <Property Name="السعر" Type="Double" />
+          <Property Name="الاجمالى" Type="Double" />
+          <Property Name="وارد" Type="Double" />
+          <NavigationProperty Name="المخزن" Relationship="omarKamalModel.FK_المبيعات_المخزن" FromRole="المبيعات" ToRole="المخزن" />
+        </EntityType>
+        <EntityType Name="المخزن">
+          <Key>
+            <PropertyRef Name="الكود" />
+          </Key>
+          <Property Name="الكود" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="التاريخ" Type="DateTime" Precision="3" />
+          <Property Name="اسم_الصنف" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="الموديل" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="رصيد_أول_المده" Type="Int32" />
+          <Property Name="رصيد_اخر_المده" Type="Int32" />
+          <Property Name="اسم_معدل_الجدول" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="تاريخ_التعديل" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="المبيعات" Relationship="omarKamalModel.FK_المبيعات_المخزن" FromRole="المخزن" ToRole="المبيعات" />
+          <NavigationProperty Name="المشتريات" Relationship="omarKamalModel.FK_المشتريات_المخزن" FromRole="المخزن" ToRole="المشتريات" />
+          <NavigationProperty Name="الموردين" Relationship="omarKamalModel.FK_الموردين_المخزن" FromRole="المخزن" ToRole="الموردين" />
+          <NavigationProperty Name="العملاء" Relationship="omarKamalModel.FK_العملاء_المخزن1" FromRole="المخزن" ToRole="العملاء" />
+        </EntityType>
+        <EntityType Name="المشتريات">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="رقم_كود_الصنف" Type="Int32" />
+          <Property Name="التاريخ" Type="DateTime" Precision="3" />
+          <Property Name="العدد" Type="Int32" />
+          <Property Name="السعر" Type="Double" />
+          <NavigationProperty Name="المخزن" Relationship="omarKamalModel.FK_المشتريات_المخزن" FromRole="المشتريات" ToRole="المخزن" />
+          <Property Name="الاجمالى" Type="Double" />
+        </EntityType>
+        <EntityType Name="الموردين">
+          <Key>
+            <PropertyRef Name="الكود" />
+          </Key>
+          <Property Name="الكود" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="اسم_المورد" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="التاريخ" Type="DateTime" Precision="3" />
+          <Property Name="الصنف" Type="Int32" />
+          <Property Name="الموديل" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="العدد" Type="Int32" />
+          <Property Name="السعر" Type="Double" />
+          <Property Name="الاجمالى" Type="Double" />
+          <Property Name="تورديد" Type="Double" />
+          <Property Name="الرصيد" Type="Double" />
+          <NavigationProperty Name="المخزن" Relationship="omarKamalModel.FK_الموردين_المخزن" FromRole="الموردين" ToRole="المخزن" />
+        </EntityType>
+        <Association Name="FK_المبيعات_المخزن">
+          <End Type="omarKamalModel.المخزن" Role="المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="omarKamalModel.المبيعات" Role="المبيعات" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="المبيعات">
+              <PropertyRef Name="رقم__كود_الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المشتريات_المخزن">
+          <End Type="omarKamalModel.المخزن" Role="المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="omarKamalModel.المشتريات" Role="المشتريات" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="المشتريات">
+              <PropertyRef Name="رقم_كود_الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_الموردين_المخزن">
+          <End Type="omarKamalModel.المخزن" Role="المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="omarKamalModel.الموردين" Role="الموردين" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="الموردين">
+              <PropertyRef Name="الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="اسم_المستخدم" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="الرقم_السرى" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_العملاء_المخزن1">
+          <End Type="omarKamalModel.المخزن" Role="المخزن" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="omarKamalModel.العملاء" Role="العملاء" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المخزن">
+              <PropertyRef Name="الكود" />
+            </Principal>
+            <Dependent Role="العملاء">
+              <PropertyRef Name="رقم_كود_الصنف" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="omarKamalModelStoreContainer" CdmEntityContainer="omarKamalEntities">
+          <EntitySetMapping Name="logs">
+            <EntityTypeMapping TypeName="omarKamalModel.log">
+              <MappingFragment StoreEntitySet="log">
+                <ScalarProperty Name="اسم_صاحب_العمليه" ColumnName="اسم صاحب العمليه" />
+                <ScalarProperty Name="التفاصيل" ColumnName="التفاصيل" />
+                <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
+                <ScalarProperty Name="نوع_العمليه" ColumnName="نوع العمليه" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="العملاء">
+            <EntityTypeMapping TypeName="omarKamalModel.العملاء">
+              <MappingFragment StoreEntitySet="العملاء">
+                <ScalarProperty Name="اجمالى_المبلغ" ColumnName="اجمالى المبلغ" />
+                <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
+                <ScalarProperty Name="رقم_كود_الصنف" ColumnName="رقم كود الصنف" />
+                <ScalarProperty Name="المتبقي" ColumnName="المتبقي" />
+                <ScalarProperty Name="المدفوع" ColumnName="المدفوع" />
+                <ScalarProperty Name="اسم_العميل" ColumnName="اسم العميل" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="المبيعات">
+            <EntityTypeMapping TypeName="omarKamalModel.المبيعات">
+              <MappingFragment StoreEntitySet="المبيعات">
+                <ScalarProperty Name="وارد" ColumnName="وارد" />
+                <ScalarProperty Name="الاجمالى" ColumnName="الاجمالى" />
+                <ScalarProperty Name="السعر" ColumnName="السعر" />
+                <ScalarProperty Name="العدد" ColumnName="العدد" />
+                <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
+                <ScalarProperty Name="رقم__كود_الصنف" ColumnName="رقم  كود الصنف" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="المخزن">
+            <EntityTypeMapping TypeName="omarKamalModel.المخزن">
+              <MappingFragment StoreEntitySet="المخزن">
+                <ScalarProperty Name="تاريخ_التعديل" ColumnName="تاريخ التعديل" />
+                <ScalarProperty Name="اسم_معدل_الجدول" ColumnName="اسم معدل الجدول" />
+                <ScalarProperty Name="رصيد_اخر_المده" ColumnName="رصيد اخر المده" />
+                <ScalarProperty Name="رصيد_أول_المده" ColumnName="رصيد أول المده" />
+                <ScalarProperty Name="الموديل" ColumnName="الموديل" />
+                <ScalarProperty Name="اسم_الصنف" ColumnName="اسم الصنف" />
+                <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
+                <ScalarProperty Name="الكود" ColumnName="الكود" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="المشتريات">
+            <EntityTypeMapping TypeName="omarKamalModel.المشتريات">
+              <MappingFragment StoreEntitySet="المشتريات">
+                <ScalarProperty Name="الاجمالى" ColumnName="الاجمالى" />
+                <ScalarProperty Name="السعر" ColumnName="السعر" />
+                <ScalarProperty Name="العدد" ColumnName="العدد" />
+                <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
+                <ScalarProperty Name="رقم_كود_الصنف" ColumnName="رقم كود الصنف" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="الموردين">
+            <EntityTypeMapping TypeName="omarKamalModel.الموردين">
+              <MappingFragment StoreEntitySet="الموردين">
+                <ScalarProperty Name="الرصيد" ColumnName="الرصيد" />
+                <ScalarProperty Name="تورديد" ColumnName="تورديد" />
+                <ScalarProperty Name="الاجمالى" ColumnName="الاجمالى" />
+                <ScalarProperty Name="السعر" ColumnName="السعر" />
+                <ScalarProperty Name="العدد" ColumnName="العدد" />
+                <ScalarProperty Name="الموديل" ColumnName="الموديل" />
+                <ScalarProperty Name="الصنف" ColumnName="الصنف" />
+                <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
+                <ScalarProperty Name="اسم_المورد" ColumnName="اسم المورد" />
+                <ScalarProperty Name="الكود" ColumnName="الكود" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="omarKamalModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="الرقم_السرى" ColumnName="الرقم السرى" />
+                <ScalarProperty Name="اسم_المستخدم" ColumnName="اسم المستخدم" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

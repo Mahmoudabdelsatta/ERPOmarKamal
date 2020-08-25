@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAddResource1.Text" xml:space="preserve">
+    <value>بيع صنف</value>
+  </data>
+  <data name="btnAddResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnback0Resource1.Text" xml:space="preserve">
+    <value>رجوع للقائمه الرئيسيه</value>
+  </data>
+  <data name="btnback0Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnback2Resource1.Text" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="btnback2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnback3Resource1.Text" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="btnback3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnbackResource1.Text" xml:space="preserve">
+    <value>رجوع للاضافه</value>
+  </data>
+  <data name="btnbackResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnmonthSearchResource1.Text" xml:space="preserve">
+    <value> بحث بالشهر</value>
+  </data>
+  <data name="btnmonthSearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPay2Resource1.Text" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="btnPay2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSearch0Resource1.Text" xml:space="preserve">
+    <value> بحث بالتاريخ</value>
+  </data>
+  <data name="btnSearch0Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSearchitemResource1.Text" xml:space="preserve">
+    <value> بحث باسم الصنف</value>
+  </data>
+  <data name="btnSearchitemResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnSearchResource1.Text" xml:space="preserve">
+    <value> بحث باسم عميل</value>
+  </data>
+  <data name="btnSearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Calendar1Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Calendar1Resource1.NextMonthText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="Calendar1Resource1.PrevMonthText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="Calendar1Resource1.SelectMonthText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="Calendar1Resource1.SelectWeekText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="Calendar1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Calendar2Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Calendar2Resource1.NextMonthText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="Calendar2Resource1.PrevMonthText" xml:space="preserve">
+    <value>&amp;lt;</value>
+  </data>
+  <data name="Calendar2Resource1.SelectMonthText" xml:space="preserve">
+    <value>&amp;gt;&amp;gt;</value>
+  </data>
+  <data name="Calendar2Resource1.SelectWeekText" xml:space="preserve">
+    <value>&amp;gt;</value>
+  </data>
+  <data name="Calendar2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.CancelText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="CommandFieldResource1.DeleteText" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CommandFieldResource1.EditText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource1.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource1.InsertText" xml:space="preserve">
+    <value>ادخال</value>
+  </data>
+  <data name="CommandFieldResource1.NewText" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="CommandFieldResource1.SelectText" xml:space="preserve">
+    <value>اختيار العنصر</value>
+  </data>
+  <data name="CommandFieldResource1.UpdateText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="CommandFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource2.CancelText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="CommandFieldResource2.DeleteText" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CommandFieldResource2.EditText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource2.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource2.InsertText" xml:space="preserve">
+    <value>ادخال</value>
+  </data>
+  <data name="CommandFieldResource2.NewText" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="CommandFieldResource2.SelectText" xml:space="preserve">
+    <value>اختيار</value>
+  </data>
+  <data name="CommandFieldResource2.UpdateText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource3.CancelText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="CommandFieldResource3.DeleteText" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CommandFieldResource3.EditText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource3.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource3.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource3.InsertText" xml:space="preserve">
+    <value>ادخال</value>
+  </data>
+  <data name="CommandFieldResource3.NewText" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="CommandFieldResource3.SelectText" xml:space="preserve">
+    <value>اختيار</value>
+  </data>
+  <data name="CommandFieldResource3.UpdateText" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="CommandFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource4.CancelText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="CommandFieldResource4.DeleteText" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CommandFieldResource4.EditText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource4.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource4.InsertText" xml:space="preserve">
+    <value>ادخال</value>
+  </data>
+  <data name="CommandFieldResource4.NewText" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="CommandFieldResource4.SelectText" xml:space="preserve">
+    <value>اختيار العنصر</value>
+  </data>
+  <data name="CommandFieldResource4.UpdateText" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="CommandFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource5.CancelText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="CommandFieldResource5.DeleteText" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CommandFieldResource5.EditText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource5.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource5.InsertText" xml:space="preserve">
+    <value>ادخال</value>
+  </data>
+  <data name="CommandFieldResource5.NewText" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="CommandFieldResource5.SelectText" xml:space="preserve">
+    <value>اختيار</value>
+  </data>
+  <data name="CommandFieldResource5.UpdateText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource6.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource6.CancelText" xml:space="preserve">
+    <value>الغاء</value>
+  </data>
+  <data name="CommandFieldResource6.DeleteText" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="CommandFieldResource6.EditText" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="CommandFieldResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource6.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CommandFieldResource6.InsertText" xml:space="preserve">
+    <value>ادخال</value>
+  </data>
+  <data name="CommandFieldResource6.NewText" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="CommandFieldResource6.SelectText" xml:space="preserve">
+    <value>اختيار</value>
+  </data>
+  <data name="CommandFieldResource6.UpdateText" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="DropDownList1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView1Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView1Resource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView2Resource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView2Resource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GridView2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblalltotalResource1.Text" xml:space="preserve">
+    <value>:اجمالى المبيعات </value>
+  </data>
+  <data name="lblalltotalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblcountFirst0Resource1.Text" xml:space="preserve">
+    <value>التحصيل:</value>
+  </data>
+  <data name="lblcountFirst0Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblcountFirstResource1.Text" xml:space="preserve">
+    <value>العدد:</value>
+  </data>
+  <data name="lblcountFirstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountLast0Resource1.Text" xml:space="preserve">
+    <value>:الاجمالى</value>
+  </data>
+  <data name="lblCountLast0Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountLast1Resource1.Text" xml:space="preserve">
+    <value>المتبقى:</value>
+  </data>
+  <data name="lblCountLast1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountLast2Resource1.Text" xml:space="preserve">
+    <value>:اسم العميل</value>
+  </data>
+  <data name="lblCountLast2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblCountLastResource1.Text" xml:space="preserve">
+    <value>السعر:</value>
+  </data>
+  <data name="lblCountLastResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDateResource1.Text" xml:space="preserve">
+    <value>التاريخ:</value>
+  </data>
+  <data name="lblDateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblItemName0Resource1.Text" xml:space="preserve">
+    <value>اسم الصنف:</value>
+  </data>
+  <data name="lblItemName0Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblModelResource1.Text" xml:space="preserve">
+    <value>الموديل:</value>
+  </data>
+  <data name="lblModelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblrasedyomyResource1.Text" xml:space="preserve">
+    <value>  الرصيد اليومى :</value>
+  </data>
+  <data name="lblrasedyomyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lbltawtotalResource1.Text" xml:space="preserve">
+    <value>:اجمالى الوارد </value>
+  </data>
+  <data name="lbltawtotalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lbltxtraseddResource1.Text" xml:space="preserve">
+    <value> اجمالى المنصرف :</value>
+  </data>
+  <data name="lbltxtraseddResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ErrorMessage" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator2Resource1.ErrorMessage" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator3Resource1.ErrorMessage" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator4Resource1.ErrorMessage" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator4Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator5Resource1.ErrorMessage" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="RequiredFieldValidator5Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RequiredFieldValidator5Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtalltotalResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtalltotalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtclientResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtclientResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtcountResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtcountResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtdateResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtdateResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtitemsearch0Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtitemsearch0Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtModelResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtModelResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtmonthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtmonthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtpriceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtpriceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtraseddResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtraseddResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtrasedyomyResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtrasedyomyResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtraseedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtraseedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtsearchResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtsearchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txttawreedResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txttawreedResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txttawtotalResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txttawtotalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txttotalResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txttotalResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>
